@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+// 入口文件可以没有后缀名，里面用commaner，lib的索引
+var program = require('commander');
+// 读取package.json里面的版本号
+var version = require('../package.json').version;
+// 引入自己写的模块
+// var read = require('../lib/main');
+program
+	// 命令行工具注册版本号
+  .version('0.0.1')
+  // 命令行工具注册命令
+  .option('-i,--init', 'init some useful files')
+  // 使用方法的提示
+  .usage('-i,--init')
+  // 解析路径上有用的参数，非命令选项
+  .parse(process.argv);
+
+// 上面所有注册所有的命令和用法进行提示说明，在没有按照命令和使用说明--使用时
+// if (program.args.length === 0) {
+// 	program.help();
+// } 
+// // 执行-p, --peppers命令的执行函数
+// else if(program.peppers) {
+// 	console.log('  - pineapple');
+// }
+// // 按照使用方法进行 文件路径为参数的执行函数
+// else {
+//   read(program.args[0]);
+// }
+
+
+// 初始化的时候，请求主文件
+if(program.init) {
+ require('../lib/main');
+}else {
+  program.help();
+}

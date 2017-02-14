@@ -1,0 +1,40 @@
+{
+  "author": {
+    "email": "nqdeng@gmail.com",
+    "name": "Nanqiao Deng"
+  },
+  "dependencies": {
+    "marked": "0.2.x"
+  },
+  "description": "Markdown fragments into a HTML with TOC",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "noattachment": false,
+    "shasum": "8f96fe59542dfc537fab6c19a99841a3fcf9d54f",
+    "size": 3417,
+    "tarball": "http://registry.npm.taobao.org/tianshu/download/tianshu-0.9.1.tgz"
+  },
+  "homepage": "https://github.com/nqdeng/tianshu",
+  "keywords": [
+    "markdown",
+    "documentation",
+    "tianshu"
+  ],
+  "main": "./bin/cc_tianshu.js",
+  "maintainers": [
+    {
+      "email": "nqdeng@gmail.com",
+      "name": "nqdeng"
+    }
+  ],
+  "name": "tianshu",
+  "optionalDependencies": {},
+  "publish_time": 1394517174183,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nqdeng/tianshu.git"
+  },
+  "version": "0.9.1"
+}
