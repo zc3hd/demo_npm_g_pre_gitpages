@@ -1,0 +1,318 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>详情页</title>
+<style>
+
+body {
+font-family: Tahoma;
+font-size: 10pt;
+/*line-height: 170%;*/
+padding-top: 10px;
+margin:0px;
+}
+/*------------------------------------------------------------侧边导航*/
+nav {
+background: gray;
+color: white;
+text-decoration: none;
+overflow-x: hidden;
+overflow-y: auto;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+width: 200px;
+}
+nav a {
+	text-decoration: none;
+	color: white;
+}
+/*-------------------------------------------------------------标头*/
+@keyframes move {
+	0% {
+		text-shadow: 5px 0px 3px rgba(0,0,0,0.5);
+		transform: perspective(2000px) rotateY(0deg);
+	}
+	25% {
+		text-shadow: 20px 0px 5px rgba(0,0,0,.3);
+		transform: perspective(2000px) rotateY(40deg);
+	}
+	50% {
+		text-shadow: 5px 0px 5px rgba(0,0,0,.5);
+		transform: perspective(2000px) rotateY(0deg);
+	}
+	75% {
+		text-shadow: -20px 0px 5px rgba(0,0,0,.3);
+		transform: perspective(2000px) rotateY(-40deg);
+	}
+	100% {
+		text-shadow: 5px 0px 3px rgba(0,0,0,0.5);
+		transform: perspective(2000px) rotateY(0deg);
+	}
+}
+
+@keyframes moveX {
+	0% {
+		text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+		transform: perspective(2000px) rotateX(0deg);
+	}
+	25% {
+		text-shadow: 0px 10px 5px rgba(0,0,0,.3);
+		transform: perspective(2000px) rotateX(30deg);
+	}
+	50% {
+		text-shadow: 0px 0px 5px rgba(0,0,0,.5);
+		transform: perspective(2000px) rotateX(0deg);
+	}
+	75% {
+		text-shadow: 0px 10px 5px rgba(0,0,0,.3);
+		transform: perspective(2000px) rotateX(-30deg);
+	}
+	100% {
+		text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+		transform: perspective(2000px) rotateX(0deg);
+	}
+}
+
+
+header {
+padding-top: 10px;
+padding-left: 220px;
+font-size: 18px;
+position: absolute;
+/*margin-bottom:30px;*/
+text-shadow: 5px 0px 3px rgba(0,0,0,.3);
+color: black;
+}
+
+header h1 {
+	
+	margin:0px;
+	padding: 0px;
+	animation: move 6s forwards infinite;
+}
+/*----------------------------------------------------------主题*/
+article {
+margin-top: 80px;
+padding-left: 220px;
+}
+
+@keyframes imgMoveOver {
+	0% {
+		/*text-shadow: 5px 5px 3px rgba(0,0,0,0.5);*/
+		transform: scale(1) ;
+	}
+	100% {
+		/*text-shadow: 5px 5px 3px rgba(0,0,0,0.5);*/
+		/*transform: perspective(2000px) rotateY(30deg);*/
+		transform: scale(1.02) translateY(-3%);
+	}
+}
+
+@keyframes imgMoveOut {
+	0% {
+		/*text-shadow: 5px 5px 3px rgba(0,0,0,0.5);*/
+		
+		transform: scale(1.1) translateY(-5%);
+	}
+	100% {
+		/*text-shadow: 5px 5px 3px rgba(0,0,0,0.5);*/
+		/*transform: perspective(2000px) rotateY(30deg);*/
+		transform: scale(1) ;
+	}
+}
+
+img {
+	/*position: relative;*/
+	width: 900px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: Orange;
+	transform-origin:left top;
+}
+img:hover {
+	animation: imgMoveOver 0.5s forwards;
+}
+/*段落*/
+h3,h4{
+	/*background-color: rgba(0,0,0,.3);*/
+	background-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 65%, rgba(0,0,0,0.2) 75%, white 100%);
+/*	width: 500px;*/
+	color: white;
+	font-size: 22px;
+	padding-left: 10px;
+}
+h4{
+	width: 50%;
+	font-size: 18px;
+	margin-left: 5px;
+}
+pre {
+	background-color: black;
+}
+pre code {
+	color: yellow;
+	font-size: 16px;
+	font-weight: 500;
+}
+/*---------------------------------------------------------底部*/
+footer {
+padding-top: 10px;
+padding-left: 220px;
+padding-bottom: 10px;
+background-color: black;
+color: white;
+}
+footer h3 {
+	color: white;
+	background-color:transparent;
+	background-image: linear-gradient(to right, black 0%,  black 100%);
+}
+</style>
+</head>
+<body>
+
+<nav>
+<ul>
+<li class="level3"><a href="#0.1">1.下载运行：</a></li><li class="level3"><a href="#0.2">2.特别注意：</a></li><li class="level4"><a href="#0.2.1">2.1当前目录：</a></li><li class="level4"><a href="#0.2.2">2.2readme.md：</a></li><li class="level3"><a href="#0.3">3.ccpage -i：</a></li><li class="level4"><a href="#0.3.1">3.1生成目录：</a></li><li class="level4"><a href="#0.3.2">3.2生成主目录：</a></li><li class="level4"><a href="#0.3.3">3.2业务逻辑：</a></li><li class="level4"><a href="#0.3.4">3.3天书改造：</a></li><li class="level4"><a href="#0.3.5">3.3效果展示：</a></li><li class="level3"><a href="#0.4">4懒的想法：</a></li><li class="level4"><a href="#0.4.1">4.1hexo撸：</a></li><li class="level4"><a href="#0.4.2">4.2爬虫：</a></li><li class="level4"><a href="#0.4.3">4.3ccpage：</a></li><li class="level4"><a href="#0.4.4">4.4幻想：</a></li><li class="level3"><a href="#0.5">开源协议</a></li></ul>
+
+</nav>
+
+<header>
+<h1 id="npm-gh-pages-">npm 全局命令行 自动生成博客gh-pages分支的展示页</h1>
+
+</header>
+
+<article>
+<h3 id="0.1">1.下载运行：</h3>
+<ul>
+<li><code>git clone  地址</code></li>
+<li><code>npm install . -g</code>本地安装</li>
+<li>在要提交的文件下 输入命令<code>ccpage --init</code>或<code>ccpage -i</code></li>
+</ul>
+<h3 id="0.2">2.特别注意：</h3>
+<h4 id="0.2.1">2.1当前目录：</h4>
+<p><img src="./webapp/readme_img/001.jpg" alt=""></p>
+<ul>
+<li>当前要转化的目录必须有webapp文件夹、webapp/readme_img文件夹、readme.md文件，大小写均可。</li>
+</ul>
+<h4 id="0.2.2">2.2readme.md：</h4>
+<ul>
+<li>题头必须是<code>#</code>加空格，后面为题头，末尾为下图：</li>
+</ul>
+<p><img src="./webapp/readme_img/002.jpg" alt=""></p>
+<ul>
+<li>为配合我自己写的展示页的样式，每段的标头为<code>###</code>空格加标头：</li>
+<li>段落下的小标题为<code>####</code>空格加标头：</li>
+<li>有微调的地方也可以用<a href="https://github.com/tianmajs/tianshu">原版天书</a>进行修改：</li>
+</ul>
+<p><img src="./webapp/readme_img/003.jpg" alt=""></p>
+<ul>
+<li>尽量每段话、标题、图片之间有换行，自己在敲的时候也好看，生成的页面也舒服：</li>
+</ul>
+<p><img src="./webapp/readme_img/004.jpg" alt=""></p>
+<h3 id="0.3">3.ccpage -i：</h3>
+<h4 id="0.3.1">3.1生成目录：</h4>
+<ul>
+<li>生成的目录及后台打印的log：</li>
+</ul>
+<p><img src="./webapp/readme_img/005.jpg" alt=""></p>
+<h4 id="0.3.2">3.2生成主目录：</h4>
+<ul>
+<li>所有的文件操作在./lib/module/file.js里，自己已经习惯所有的前端代码都是面向对象，所有这里也用面向对象实现所有的核心操作：</li>
+</ul>
+<p><img src="./webapp/readme_img/006.jpg" alt=""></p>
+<ul>
+<li>这里要大量的进行fs文件操作，采用fs-extra第三方包非常有助于我们实现业务逻辑，因为几乎很多操作都是异步进行，所以这里也采用promise规范进行包装，我用的是bluebird第三方包。没有用过这两个包的同学可以先去学习下：</li>
+</ul>
+<p><img src="./webapp/readme_img/007.jpg" alt=""></p>
+<h4 id="0.3.3">3.2业务逻辑：</h4>
+<ul>
+<li>具体的可看代码，大神过。</li>
+<li>首先是形成主目录，这里解释下为什么要形成这三个目录，因为本人的每个项目都喜欢在写完后写一个说明文档。每次提交到github上都需要建三个文件夹。git用于提交的地方，main放入自己写的全部文件及依赖，readme文件夹用于存放展示页。</li>
+<li>我这里加了个前缀 cc_ 没有什么特别含义。我叫cc。嘿嘿~</li>
+<li>生成这三个文件夹后，进行下面的移动：红色为我们写的全部文件移动到main文件夹，蓝色的线我们要提交到gh-pages分支上的展示文件。</li>
+</ul>
+<p><img src="./webapp/readme_img/008.jpg" alt=""></p>
+<ul>
+<li>移动提交到gh-pages分支上的模板文件：</li>
+</ul>
+<p><img src="./webapp/readme_img/009.jpg" alt=""></p>
+<ul>
+<li>代码部分webapp和readme.md文件要分别移动到这两个文件夹，同步复制指定文件夹，移动完成后删除原来的文件。其他文件或文件夹直接移动到main下面。</li>
+</ul>
+<p><img src="./webapp/readme_img/010.jpg" alt=""></p>
+<h4 id="0.3.4">3.3天书改造：</h4>
+<ul>
+<li>全局包变第三方包：</li>
+</ul>
+<p><img src="./webapp/readme_img/012.jpg" alt=""></p>
+<p><img src="./webapp/readme_img/011.jpg" alt=""></p>
+<h4 id="0.3.5">3.3效果展示：</h4>
+<p><img src="./webapp/readme_img/013.jpg" alt=""></p>
+<h3 id="0.4">4懒的想法：</h3>
+<h4 id="0.4.1">4.1hexo撸：</h4>
+<ul>
+<li>前几天是自己用exo博客搭建工具撸了一个博客，里面有个文件夹是用于存放博客上的文章的所有的md文件夹，这个文件夹说实话就是存在博客的所有文章的地方。我觉得很乱，又不喜欢再这个文件夹里面撸，于是~~~~</li>
+</ul>
+<h4 id="0.4.2">4.2爬虫：</h4>
+<ul>
+<li>由于我的github上每个项目都习惯用一个gh-pages分支进行说明页展示，因此每个项目都有一个展示的地址。我就写了个爬虫，把仓储中所有的项目形成每个md文件爬到博客存放md文件的地方。感觉这样确实挺对的，我没有必要把所有的文章放在一起管理，又乱，看起来麻烦，每个项目都有自己的展示页，我只需要链接过去就行了。</li>
+</ul>
+<h4 id="0.4.3">4.3ccpage：</h4>
+<ul>
+<li>接下来就是对自己写的所有项目进行提交前的创建文件夹，也是为了方便提交，看起来舒服点。因为每次写代码都是按照那样写，写完后为了提交方便又会变成现在这样的主文件夹（3个）的状态。于是ccpage全局命令行工具就撸出了。最后直接把天书的功能融合进去了。只要按照前面的要求写，出来的展示页还是很漂亮的。</li>
+</ul>
+<h4 id="0.4.4">4.4幻想：</h4>
+<ul>
+<li>其实我想一次性运行行代码就把我想完成的工作全部完成，现在还是不知道怎么实现，因为我还得：</li>
+</ul>
+<pre><code>    * ccpage进行要提交的目录的生成
+    * 本地提交项目到github
+    * 爬虫到博客管理md文件夹里
+    * 部署博客
+</code></pre><ul>
+<li>看...还得进行四次命令...</li>
+</ul>
+
+</article>
+<footer>
+<h3 id="0.5">开源协议</h3>
+<p>本程序基于MIT协议开源。</p>
+<pre><code>Copyright (c) cc.
+</code></pre>
+</footer>
+</body>
+
+<script>
+	var div = document.createElement("div"); 
+	var body = document.getElementsByTagName('body')[0];
+	console.log(body);
+div.id = 'back_index';	
+div.style.width = '200px';
+div.style.height = '200px';
+div.style.backgroundImage = "url(./back_index.png)";
+div.style.backgroundSize = 'cover';
+div.style.position = 'fixed';
+div.style.left = '0px';
+div.style.bottom = '20px';
+body.appendChild(div);
+document.write(div);
+div.onmouseover = function () {
+	/* body... */
+	div.style.animation = 'imgMoveOver 0.5s forwards';
+};
+div.onmouseout = function () {
+	/* body... */
+	div.style.animation = 'imgMoveOut 0.5s forwards';
+};
+div.onclick = function () {
+	/* body... */
+	window.location.href = "https://zc3hd.github.io/";
+};
+
+</script>
+
+</html>
